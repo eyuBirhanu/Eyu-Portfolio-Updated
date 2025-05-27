@@ -1,0 +1,1026 @@
+what did i miss here is there any thing you reccomend  me to update here in all files i am using react and tailwind css
+import { About } from "./components/About";
+import { Certificates } from "./components/Certificates";
+import { Collaborate } from "./components/Collaborate";
+import { Experience } from "./components/Experience";
+import { Footer } from "./components/Footer";
+import { Hero } from "./components/Hero";
+import { MyDetailExp } from "./components/MyDetailExp";
+import { NavBar } from "./components/NavBar";
+
+function App() {
+return (
+
+<div className="bg-blackCustom  font-Roboto font-light">
+<NavBar />
+<Hero />
+<Experience />
+<About />
+<MyDetailExp />
+<Certificates />
+<Collaborate />
+<Footer />
+</div>
+);
+}
+
+
+export default App;
+
+import React, { useState } from "react";
+
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+import logo from "../assets/Desktop/logo.svg";
+import menuIcon from "../assets/Mobile/menu.svg";
+import closeIcon from "../assets/close.svg";
+
+import { NavLinks } from "./common/NavLinks";
+import { SocialLinks } from "./common/SocialLinks";
+
+export const NavBar = () => {
+const navText = [
+{ text: "HOME", link: "#home" },
+{ text: "EXPLORER", link: "#explorer" },
+{ text: "ABOUT", link: "#about" },
+{ text: "COLLABORATE", link: "#collaborate" },
+];
+
+const [isActive, setIsActive] = useState(false);
+
+const toggleMenu = () => {
+setIsActive(!isActive);
+};
+
+const closeMenu = () => {
+setIsActive(false);
+};
+
+return (
+<>
+
+<header className="flex justify-center">
+<div className="fixed top-4 z-50 flex justify-between items-center left-1/2 -translate-x-1/2 w-11/12 h-12 px-4 backdrop-blur-xl rounded-lg ">
+<a href="#home" onClick={isActive ? closeMenu : undefined}>
+{" "}
+<img src={logo} alt="Logo" className="h-6 sm:h-8" />{" "}
+</a>
+
+<div className="hidden sm:flex  items-center gap-x-6  md:gap-x-32">
+        <nav>
+          <NavLinks navText={navText} />
+        </nav>
+        <SocialLinks iconClassName="text-xl" />
+      </div>
+
+<button
+    onClick={toggleMenu}
+    id="menu-toggle"
+    className="sm:hidden z-[60] p-1 -mr-1 text-gray-200 hover:text-white"
+    aria-label="Toggle navigation menu"
+    aria-expanded={isActive}
+    aria-controls="main-nav-panel"
+  >
+    <img
+      src={isActive ? closeIcon : menuIcon}
+      alt=""
+      className="w-6 h-6"
+    />
+  </button>
+</div>
+
+  </header>
+
+
+{isActive && (
+<>
+<div
+onClick={closeMenu}
+className="fixed inset-0 z-40 bg-black/65 sm:hidden"
+aria-hidden="true"
+></div>
+
+<div
+    id="main-nav-panel"
+    className="fixed top-20 left-1/2 -translate-x-1/2 border-[.2px] rounded-lg border-lightWhite/50 w-10/12 z-50 backdrop-blur-lg bg-blackCustom/20 sm:hidden flex flex-col items-start justify-start p-6 shadow-xl"
+  >
+    <nav className="flex flex-col items-center justify-center gap-y-8 text-center w-full">
+      <NavLinks navText={navText} onLinkClick={closeMenu} isMobile />
+    </nav>
+  </div>
+</>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+IGNORE_WHEN_COPYING_END
+
+)}
+</>
+
+);
+};
+
+import React, { useState } from "react";
+import experiance from "../experience.json";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+export const MyDetailExp = () => {
+const [activeIndex, setActiveIndex] = useState(null);
+
+const handleClick = (index) => {
+setActiveIndex(activeIndex === index ? null : index);
+};
+
+return (
+
+<div>
+<section className="flex items-center justify-center py-4 bg-blackCustom text-lightWhite">
+<div
+className="
+hidden sm:block 
+fixed
+w-[713.2px]
+h-[234.2px]
+rotate-[-155deg]
+blur-[150px] sm:blur-[250px]
+-right-40 sm:-right-60
+-top-20
+rounded-full
+bg-lightWhite/10 sm:bg-lightWhite/25
+pointer-events-none"
+aria-hidden="true"
+></div>
+<div className="flex gap-6 w-11/12 flex-col py-4">
+<h2 className="font-Josefin_Sans lg:col-span-2 text-3xl sm:text-4xl font-semibold text-lightWhite text-left">
+Experience
+</h2>
+<div className="flex flex-col sm:flex-row gap-8 w-full overflow-hidden">
+<div className="gap-8 grid grid-cols-1 lg:grid-cols-2 lg:items-start">
+{experiance.map((exp, index) => {
+const isActive = activeIndex === index;
+return (
+<div key={index} className="flex gap-4 w-full">
+<p className="text-greenDark text-sm font-medium">
+{exp.year}
+</p>
+<div className="flex gap-2 flex-col w-full">
+<div className=" flex justify-between items-center gap-8 w-full">
+<p
+onClick={() => handleClick(index)}
+className=" hover:bg-lightWhite/5 rounded-sm w-full font-medium text-lg sm:text-xl cursor-pointer"
+>
+{exp.title}
+</p>
+<i
+onClick={() => handleClick(index)}
+className={${ isActive ? "fa-angle-up" : "fa-angle-down" } fa-solid text-iconColor hover:text-lightWhite/75 text-sm cursor-pointer}
+></i>
+</div>
+<p className="text-paragraph text-base">{exp.since}</p>
+{isActive && (
+<div className="detail flex gap-1 flex-col">
+{" "}
+{exp.description.map((disc, discIndex) => {
+return (
+<div
+key={discIndex}
+className="flex gap-2 items-start text-light_white/65 "
+>
+<div className="mt-[6px] min-w-2 min-h-2 bg-lightWhite/65 rounded-full"></div>
+<p className="text-lightWhite/70">{disc}</p>
+</div>
+);
+})}
+</div>
+)}
+</div>
+</div>
+);
+})}
+</div>
+</div>
+</div>
+</section>
+</div>
+);
+};
+import React from "react";
+import profile from "../assets/Desktop/Profile.png";
+import bounce from "../assets/avaliable Bounce.svg";
+import cv from "../assets/Eyu_Birhanus's_cv.pdf";
+
+
+export const Hero = () => {
+return (
+<div>
+<section
+id="home"
+className="bg-linearBlack text-lightWhite pt-24 pb-20 lg:h-screen flex flex-col items-center justify-center gap-4 px-4"
+>
+<img className="w-40 max-w-[160px]" src={profile} alt="Profile" />
+<h1 className="text-3xl lg:text-4xl font-medium">Hi, I’m Eyu</h1>
+<div className="flex font-light text-lightWhite/80 bg-grayDark gap-1 px-3 rounded-xl ">
+<img src={bounce} alt="" />
+<p>Available for freelance</p>
+</div>
+<p className="text-3xl lg:text-4xl font-medium text-center px-4">
+Crafting Seamless Digital Experiences
+</p>
+<p className="text-base text-paragraph text-center sm:8/12 lg:w-4/12">
+Passionate web developer & UI/UX designer, turning ideas into
+intuitive and stunning digital solutions
+</p>
+<a
+download="Eyu_Birhanus's cv"
+className="bg-lightWhite hover:bg-white/80 text-blackCustom font-medium py-3 px-14 rounded-xl"
+href={cv}
+target="_blank"
+>
+Download Cv
+</a>
+</section>
+</div>
+);
+};
+
+import React from "react";
+import { SocialLinks } from "./common/SocialLinks";
+
+export const Footer = () => {
+const nav = [
+{ text: "Home", link: "#home" },
+{ text: "Explorer", link: "#explorer" },
+{ text: "About", link: "#about" },
+{ text: "Collaborate", link: "#collaborate" },
+];
+return (
+<>
+<footer className="flex items-center justify-center py-8 bg-blackCustom">
+<div className="flex gap-6 w-11/12 flex-col py-8">
+<hr />
+<div className="flex flex-col-reverse items-center justify-center gap-4 sm:flex-row sm:justify-between text-lightWhite/75 ">
+<p className="text-sm">
+© 2025 All rights are reserved.{" "}
+<a
+className="hover:text-lightWhite/90"
+href="https://www.linkedin.com/in/eyu-birhanu/"
+>
+{" "}
+Eyu Birhanu
+</a>{" "}
+</p>
+
+<div className="flex flex-col gap-4">
+          <div className="flex gap-2 font-Josefin_Sans text-base">
+            {nav.map((item, index) => {
+              return (
+                <React.Fragment key={index}>
+                  <a className="hover:text-lightWhite/90" href={item.link}>
+                    {item.text}
+                  </a>
+                  {index < nav.length - 1 && <p>/</p>}
+                </React.Fragment>
+              );
+            })}
+          </div>
+          <div className="flex  gap-4 items-center justify-center sm:justify-start">
+            <SocialLinks iconClassName="text-xl" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+IGNORE_WHEN_COPYING_END
+
+);
+};
+
+import React from "react";
+import projectsData from "../projects.json";
+import { Tag } from "./common/Tag.jsx";
+
+const ProjectCard = ({ project }) => {
+const tags = project.tags && Array.isArray(project.tags) ? project.tags : [];
+
+return (
+<div className="flex flex-col  gap-6 sm:gap-8 items-start p-4 sm:p-6 bg-blackCustom rounded-lg shadow-xl backdrop-blur-md border border-lightWhite/5 h-full">
+<div className="w-full  flex-shrink-0">
+<a
+className="block hover:-translate-y-1 transition-transform duration-300 ease-in-out group rounded-lg overflow-hidden"
+href={project.live}
+target="_blank"
+rel="noopener noreferrer"
+>
+<img
+className="w-full  shadow-md group-hover:shadow-xl transition-shadow"
+src={project.imgSrc}
+alt={project.alt || Screenshot of ${project.title}}
+/>
+</a>
+</div>
+
+<div className="flex flex-col gap-3 w-full">
+    <h3 className="text-xl lg:text-2xl font-semibold text-white hover:text-lightWhite transition-colors">
+      {project.title}
+    </h3>
+    <p className="text-paragraph text-sm sm:text-base leading-relaxed">
+      {project.description}
+    </p>
+    {project.repo && (
+      <a
+        className="text-greenDark font-normal hover:underline text-sm inline-block"
+        href={project.repo}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        #Check Repo
+      </a>
+    )}
+    {tags.length > 0 && (
+      <div className="mt-4">
+        <div className="flex flex-row flex-wrap gap-2">
+          {tags.map((tagText, index) =>
+            tagText ? (
+              <Tag key={`${tagText}-${index}`} tagText={tagText} />
+            ) : null
+          )}
+        </div>
+      </div>
+    )}
+  </div>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+IGNORE_WHEN_COPYING_END
+
+);
+};
+
+export const Experience = () => {
+return (
+<div>
+<section
+id="explorer"
+className="relative flex items-center justify-center py-10 sm:py-16 bg-blackCustom overflow-hidden"
+>
+<div
+className="
+hidden sm:block 
+fixed
+w-[713.2px]
+h-[234.2px]
+rotate-[-155deg]
+blur-[150px] sm:blur-[250px]
+-right-40 sm:-right-60
+-top-20
+rounded-full
+bg-lightWhite/10 sm:bg-lightWhite/25
+pointer-events-none"
+aria-hidden="true"
+></div>
+
+<div className="grid grid-cols-1 lg:grid-cols-2 w-11/12 max-w-screen-lg xl:max-w-screen-xl gap-x-8 gap-y-10 sm:gap-y-12 py-4 z-10">
+      <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl sm:text-4xl font-semibold text-lightWhite text-left">
+        Explore My Projects
+      </h2>
+      {projectsData.length > 0 ? (
+        projectsData.map((project) => (
+          <ProjectCard
+            key={project.id || project.title}
+            project={project}
+          />
+        ))
+      ) : (
+        <p className="text-Paragraph text-center lg:col-span-2">
+          {" "}
+          No projects to display at the moment.
+        </p>
+      )}{" "}
+      <div className="w-full  flex flex-col  ">
+        <p className="font-Josefin_Sans text-lg sm:text-xl text-lightWhite ">
+          Find More Of My Work
+        </p>
+        <div className="flex gap-2 text-greenDark">
+          <a
+            href="https://www.frontendmentor.io/profile/Eyu32"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" hover:underline  transition-all text-sm  hover:-translate-y-[.5px] duration-300 ease-in-out"
+            aria-label="Frontend Mentor Profile"
+          >
+            #Frontend Mentor
+          </a>
+          <a
+            href="https://github.com/Eyu32"
+            target="_blank"
+            rel="noopener noreferrer"
+            className=" hover:underline  transition-all text-sm  hover:-translate-y-[.5px] duration-300 ease-in-out"
+            aria-label="GitHub Profile"
+          >
+            #GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+IGNORE_WHEN_COPYING_END
+
+);
+};
+
+import React from "react";
+import email from "../assets/email.svg";
+import collaborate from "../assets/collaborate.svg";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+export const Collaborate = () => {
+return (
+<div>
+<section
+id="collaborate"
+className="flex bg-blackCustom items-center justify-center py-8 px-4"
+>
+<div className="flex items-center justify-center h-[400px] sm:h-[500px]  bg-lightWhite text-blackCustom w-[95%] max-w-[1600px] flex-col py-8 rounded-2xl">
+<div className="relative flex items-center justify-center flex-col gap-6">
+<img
+className="w-[90px] h-[90px] sm:w-[120px] sm:h-[120px]"
+src={collaborate}
+alt="collaborate"
+/>
+<p className="w-10/12 text-center font-Josefin_Sans text-3xl lg:text-4xl font-medium">
+Tell me about your next project
+</p>
+<div className="flex flex-col sm:flex-row gap-6 ">
+<a
+className="w-full flex  items-center gap-2 bg-blackCustom hover:bg-blackCustom/90 text-lightWhite font-medium py-3 px-8 rounded-xl"
+href="eyubirhanu01@gmail.com"
+>
+<img src={email} alt="email" />
+<p className="text-nowrap">Email me</p>
+</a>
+<a
+className="w-full flex items-center gap-2 bg-light_white border-blackCustom border-[1.5px] hover:border-blackCustom/90 text-blackCustom hover:text-blackCustom/90 font-medium py-3 px-8 rounded-xl"
+href="https://t.me/eyubirhanu"
+>
+<i className="fa-brands fa-telegram text-blackCustom"></i>
+<p>Telegram</p>
+</a>
+</div>
+</div>
+<div className="absolute w-full max-w-[713px] h-[100px] sm:h-[234.2px] rotate-[35deg] blur-[250px] sm:blur-[150px] right-0 sm:-right-40 rounded-full bg-blackCustom/25"></div>
+<div className="hidden sm:inline absolute w-[713.2px] h-[234.2px] rotate-[-155deg] blur-[150px] -left-60 rounded-full bg-blackCustom/25"></div>
+</div>
+</section>
+</div>
+);
+};
+
+import React from "react";
+import certificateJson from "../certificates.json";
+import "@fortawesome/fontawesome-free/css/all.min.css";
+
+export const Certificates = () => {
+return (
+<div>
+<section className="flex items-center justify-center py-8 bg-blackCustom text-lightWhite">
+<div className="flex gap-6 w-11/12 flex-col py-8">
+<h2 className="font-Josefin_Sans lg:col-span-2 text-3xl sm:text-4xl font-semibold text-lightWhite text-left">
+Certification
+</h2>
+<div className="flex flex-col sm:flex-row gap-8 sm:gap-4">
+{certificateJson.map((certificate) => {
+return (
+<div key={certificate.id} className=" w-full lg:w-1/3 flex">
+<div className="w-10/12 flex flex-col gap-4">
+<p className="w-11/12 font-medium text-xl ">
+{certificate.title}
+</p>
+<div className="w-11/12 text-lightWhite/55 text-base">
+{certificate.description}
+<p className="text-greenDark text-sm/8 ">
+#{certificate.year}
+</p>
+</div>
+</div>
+<a
+href={certificate.link}
+className="flex items-center justify-center hover:bg-lightWhite/5 h-[24px] w-[24px]"
+>
+<i className="fa-solid  text-lightWhite/55 hover:text-lightWhite/80  fa-up-right-from-square"></i>
+</a>
+</div>
+);
+})}
+</div>
+</div>
+</section>
+</div>
+);
+};
+
+import React, { useState } from "react";
+import aboutMeImage from "../assets/Desktop/about_me.png";
+import Span from "./common/Span";
+
+export const About = () => {
+const [showMore, setShowMore] = useState(false);
+
+const toggleShowMore = () => {
+setShowMore(!showMore);
+};
+
+return (
+<div>
+<section
+id="about"
+className="relative flex items-center justify-center py-12 sm:py-20 bg-blackCustom overflow-hidden"
+>
+<div
+className="
+hidden sm:block 
+fixed
+w-[713.2px]
+h-[234.2px]
+rotate-[-155deg]
+blur-[150px] sm:blur-[250px]
+-right-40 sm:-right-60
+-top-20
+rounded-full
+bg-lightWhite/10 sm:bg-lightWhite/25
+pointer-events-none"
+aria-hidden="true"
+></div>
+
+<div className="relative z-10 flex flex-col w-11/12 max-w-screen-lg xl:max-w-screen-xl gap-8 sm:gap-10 py-4">
+      <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl sm:text-4xl font-semibold text-lightWhite text-left">
+        About Me
+      </h2>
+
+      <div className="flex flex-col lg:flex-row items-center lg:items-center gap-4 sm:gap-6">
+        <div className="flex flex-col gap-4 text-lightWhite/60 order-2 lg:order-1">
+          {" "}
+          <p className="text-base leading-relaxed">
+            Hi! I'm a <Span text={"Web Developer"} /> and{" "}
+            <Span text={"UI/UX Designer"} /> who loves creating easy-to-use
+            and engaging digital experiences. I co-founded GO2COD, a
+            non-profit where we help aspiring tech professionals worldwide
+            build their portfolios with free, hands-on internships,
+            mentoring them in design and development.
+          </p>
+          <div
+            className={`transition-all duration-500 ease-in-out overflow-hidden ${
+              showMore ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
+            } sm:max-h-none sm:opacity-100 flex flex-col gap-4`}
+            id="more-text-content"
+            aria-hidden={
+              !showMore &&
+              typeof window !== "undefined" &&
+              window.innerWidth < 640
+            }
+          >
+            <p className="text-base first-letter:leading-relaxed">
+              {" "}
+              I'm also currently boosting my skills with{" "}
+              <Span text={"A2SV (Africa to Silicon Valley)."} />, focusing
+              on Data Structures, Algorithms, and software engineering to
+              tackle real-world challenges and make a global impact.
+            </p>
+            <p className="text-base leading-relaxed">
+              If you're into web development, UI/UX, or projects that make a
+              difference, let's connect!
+            </p>
+          </div>
+          <button
+            onClick={toggleShowMore}
+            className="sm:hidden  hover:text-[#447e54]/60 text-[#447e54] hover:underline self-start mt-2"
+            aria-expanded={showMore}
+            aria-controls="more-text-content"
+          >
+            {showMore ? "See Less" : "See More..."}
+          </button>
+        </div>
+
+        <div className="flex items-center lg:w-1/2 justify-center order-1 lg:order-2 flex-shrink-0">
+          {" "}
+          <img
+            className="shadow-lg max-w-full"
+            src={aboutMeImage}
+            alt="A portrait of Eyu Birhanu"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+IGNORE_WHEN_COPYING_END
+
+);
+};
+
+import React from "react";
+
+export const Tag = ({ tagText }) => {
+return (
+<span className="bg-blackCustom text-white/80 px-4 py-1 rounded-md border-[.2px] border-lightWhite/20 hover:border-lightWhite/50 hover:text-lightWhite/90 text-sm font-normal hover:bg-blackCustom/95 transition cursor-default duration-300 ease-in-out">
+{tagText}
+</span>
+);
+};
+
+import React from "react";
+
+const Span = ({ text }) => {
+return (
+<>
+<span className="text-greenLight text-nowrap font-normal border-[.5px] rounded-[4px] py-[1.5px] px-[6px] border-lightWhite/40  ">
+{text}
+</span>
+</>
+);
+};
+
+export default Span;
+
+import React from "react";
+const socialLinks = [
+{ icon: "fa-github", link: "https://github.com/Eyu32" },
+{ icon: "fa-linkedin", link: "https://www.linkedin.com/in/eyu-birhanu/" },
+{ icon: "fa-telegram", link: "https://t.me/eyubirhanu" },
+{ icon: "fa-instagram", link: "" },
+];
+
+export const SocialLinks = () => {
+return (
+<div className="hidden lg:flex  gap-4 items-center justify-center">
+{socialLinks.map((item, index) => {
+return (
+<a
+key={index}
+className="text-iconColor hover:text-lightWhite"
+href={item.link}
+>
+<i className={fa-brands ${item.icon}}></i>
+</a>
+);
+})}
+</div>
+);
+};
+
+import React from "react";
+
+export const NavLinks = ({ navText, onLinkClick, isMobile }) => {
+const handleLocalLinkClick = (e, link) => {
+if (onLinkClick && link.startsWith("#")) {
+onLinkClick();
+}
+};
+
+return (
+<div
+className={flex w-full items-start ${ isMobile ? "flex-col gap-y-6" : "flex-row gap-x-6 md:gap-x-10" }}
+>
+{navText.map((item, index) => (
+<a
+key={index}
+className={font-Josefin_Sans font-extralight text-start text-gray-200 hover:text-white transition-colors duration-200  ${isMobile ? "text-lg  " : "text-sm"}}
+href={item.link}
+onClick={(e) => handleLocalLinkClick(e, item.link)}
+>
+{item.text}
+</a>
+))}
+</div>
+);
+};
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+scroll-behavior: smooth;
+scroll-padding: 5rem;
+overflow-x: hidden;
+}
+body{
+background-color: #1A1A1A;
+overflow-x: hidden;
+}
+
+/** @type {import('tailwindcss').Config} /
+export default {
+content: ["./index.html", "./src/**/.{js,ts,jsx,tsx}"],
+theme: {
+extend: {
+backgroundImage: {
+linearBlack:
+'linear-gradient(to right bottom, #444348 0%, #3A393D 9%, #2F2F31 37%, #1A1A1A 93%)',
+frontendMentorLite: 'url("/assets/Desktop/frontend_mentor_lite.svg")',
+frontendMentor: 'url("/assets/Desktop/frontend_mentor.svg")',
+},
+colors: {
+blackCustom: '#1A1A1A',
+lightWhite: '#FCFBFC',
+paragraph: '#777777',
+grayDark: '#3F4352',
+iconColor: '#898989',
+// greenDark: '#375B41',
+greenDark: '#447e54',
+// greenLight: '#bfe959',
+greenLight: '#8daf6b',
+},
+fontFamily: {
+Roboto: ['"Roboto"', 'sans-serif'],
+Josefin_Sans: ['"Josefin Sans"', 'sans-serif'],
+},
+},
+},
+plugins: [],
+};
+
+if any give me the update dpart componenet
+
+
+
+
+
+
+
+// 
+
+
+
+
+
+
+
+Okay, this is a very well-structured portfolio site using React and Tailwind CSS! You've done a great job with componentization, using JSON for data, and incorporating accessibility features.
+
+Here's a breakdown of what you've done well and some recommendations for updates, file by file where applicable:
+
+Overall Strengths:
+
+Component-Based Architecture: Good separation of concerns into components.
+
+Data Management: Using JSON files (experience.json, projects.json, certificates.json) for content is excellent for maintainability.
+
+Tailwind CSS: Consistent use of Tailwind utility classes.
+
+Accessibility (A11y): Good use of aria- attributes in several places (e.g., NavBar, About).
+
+Responsive Design: Clear considerations for mobile (sm:hidden, sm:flex, etc.).
+
+Smooth Scrolling: scroll-behavior: smooth and scroll-padding in index.css are good UX.
+
+Visuals: The blurred background elements add a nice touch (though see note below).
+
+Recommendations & Updates:
+
+Here are potential updates, component by component where specific changes are notable.
+
+1. App.js
+* No major issues here. It's clean and serves its purpose well.
+* Minor nitpick: Consider adding a <main> tag to wrap your primary content sections for better semantics, though a top-level div is common in React apps.
+jsx function App() { return ( <div className="bg-blackCustom font-Roboto font-light"> <NavBar /> <main> {/* Optional: for semantic grouping of main content */} <Hero /> <Experience /> <About /> <MyDetailExp /> <Certificates /> <Collaborate /> </main> <Footer /> </div> ); }
+
+2. NavBar.js
+* FontAwesome Imports: You import @fortawesome/fontawesome-free/css/all.min.css in multiple components. It's better to import it once globally, either in your index.js (or main.jsx) or App.js.
+* Recommendation: Move the import to src/index.js or src/main.jsx (whichever is your app's entry point) before your App component is rendered.
+```javascript
+// Example in src/main.jsx or src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css'; // Your global styles
+import '@fortawesome/fontawesome-free/css/all.min.css'; // Import FontAwesome CSS once
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+          <React.StrictMode>
+            <App />
+          </React.StrictMode>,
+        );
+        ```
+        Then remove the import from `NavBar.js`, `MyDetailExp.js`, `Collaborate.js`, `Certificates.js`.
+*   **Logo Click Behavior:** `onClick={isActive ? closeMenu : undefined}` on the logo link. It's fine, but typically, clicking the logo always navigates to home. If the menu is open, it should also close. You could simplify or just let `NavLinks` handle `closeMenu` if the logo link is part of `navText`. Since it's separate, your current approach is okay for ensuring the menu closes.
+*   **Accessibility of Mobile Menu:** The `aria-hidden="true"` on the overlay is good.
+*   **
+
+3. MyDetailExp.js
+* Icon ClassName: The way you construct the icon className is a bit verbose:
+className={${ isActive ? "fa-angle-up" : "fa-angle-down" } fa-solid ...}
+* Recommendation: Use template literals more cleanly or a utility like clsx or classnames if you have many conditional classes.
+jsx // Simpler template literal <i onClick={() => handleClick(index)} className={`fa-solid ${isActive ? "fa-angle-up" : "fa-angle-down"} text-iconColor hover:text-lightWhite/75 text-sm cursor-pointer`} ></i>
+* Fixed Background Blur: The fixed positioned decorative div. If multiple sections (MyDetailExp, Experience, About) use this same fixed element strategy and are potentially visible in the viewport simultaneously (e.g., on very tall screens or if sections are short), these fixed elements will overlap or all be visible in their fixed positions.
+* If the intention is for these blurs to be "attached" to their respective sections and scroll with them (but appear fixed within the section's viewport area), position: absolute relative to the section parent (which would need position: relative) and careful overflow handling might be more predictable. However, pointer-events-none and aria-hidden="true" are correctly used. If your current visual effect is what you intend, it's okay.
+
+4. Hero.js
+* CV Link Security: For links opening in a new tab, always add rel="noopener noreferrer".
+* Updated <a> tag for CV:
+jsx <a download="Eyu_Birhanus's cv.pdf" // Good to include extension in filename className="bg-lightWhite hover:bg-white/80 text-blackCustom font-medium py-3 px-14 rounded-xl" href={cv} target="_blank" rel="noopener noreferrer" // Added for security > Download Cv </a>
+
+5. Footer.js
+* DRY Nav Links: The nav array is very similar to navText in NavBar.js. Consider defining this data in a central place (e.g., a constants.js file or pass it down if appropriate) to avoid repetition.
+* Example src/constants/navigation.js:
+javascript export const NAV_LINKS = [ { text: "HOME", link: "#home", footerText: "Home" }, { text: "EXPLORER", link: "#explorer", footerText: "Explorer" }, { text: "ABOUT", link: "#about", footerText: "About" }, { text: "COLLABORATE", link: "#collaborate", footerText: "Collaborate" }, ];
+Then import and use NAV_LINKS in both NavBar and Footer, adapting the text or footerText as needed.
+* Dynamic Year: The copyright year © 2025 is hardcoded.
+* Recommendation:
+jsx <p className="text-sm"> © {new Date().getFullYear()} All rights are reserved.{" "} {/* ... rest of the link */} </p>
+
+6. Experience.js (Projects Section)
+* ProjectCard Component:
+* Image Alt Text: alt={project.alt || Screenshot of ${project.title}} is a good fallback. Ensure project.alt is descriptive if provided.
+* Key Prop: key={project.id || project.title} is good.
+* Typo: text-Paragraph (capital P) should probably be text-paragraph to match your Tailwind config.
+* Update:
+jsx <p className="text-paragraph text-center lg:col-span-2"> {" "} No projects to display at the moment. </p>
+* Organization: ProjectCard is defined within Experience.js. For larger components or if ProjectCard is used elsewhere, consider moving it to its own file (e.g., components/ProjectCard.jsx). For its current usage, it's acceptable.
+
+7. Collaborate.js
+* Email Link: href="eyubirhanu01@gmail.com" should be href="mailto:eyubirhanu01@gmail.com".
+* Update:
+jsx <a className="w-full flex items-center gap-2 bg-blackCustom hover:bg-blackCustom/90 text-lightWhite font-medium py-3 px-8 rounded-xl" href="mailto:eyubirhanu01@gmail.com" // Added mailto: > <img src={email} alt="email icon" /> {/* Added alt text */} <p className="text-nowrap">Email me</p> </a>
+* Icon Alt Text: Add alt text to the email.svg image.
+* Telegram Icon: The <i> tag for Telegram is fine, but if you're moving to react-fontawesome or SVGs, you'd update this too.
+
+8. Certificates.js
+* Line Height Typo: text-sm/8 is unusual. Tailwind's line-height usually follows leading-{number} or leading-{size}. If you mean line-height of 8 (which is very small for text-sm), it might be leading-[8px]. If you mean leading-8 (2rem), it would be text-sm leading-8. Or perhaps it was a typo for text-sm/opacity-80 (text-sm text-greenDark/80)? Assuming it's just text-sm:
+* Update (assuming standard line height):
+jsx <div className="w-11/12 text-lightWhite/55 text-base"> {certificate.description} <p className="text-greenDark text-sm"> {/* Corrected: removed /8 */} #{certificate.year} </p> </div>
+
+9. About.js
+* Aria-hidden for "See More":
+The logic aria-hidden={!showMore && typeof window !== "undefined" && window.innerWidth < 640} is trying to be clever, but aria-hidden should simply reflect the visual state. If the content is visually hidden (due to max-h-0 opacity-0), aria-hidden="true" is appropriate. Screen readers will respect the CSS that hides it.
+* Recommendation:
+jsx <div className={`transition-all duration-500 ease-in-out overflow-hidden ${ showMore ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0" } sm:max-h-none sm:opacity-100 flex flex-col gap-4`} id="more-text-content" aria-hidden={!showMore && window.innerWidth < 640} // Simplified: if you still want it conditional on mobile only // OR simply: // aria-hidden={!showMore} // If it's visually hidden, it's hidden. // However, since on sm+ screens it's always visible (sm:max-h-none sm:opacity-100), // the condition `!showMore && window.innerWidth < 640` (or equivalent media query in JS) is actually correct // if you want aria-hidden to ONLY apply when it's *actually* collapsible AND collapsed. // Your current logic is fine if that's the precise intent. >
+My apologies, your current logic for aria-hidden in About.js is actually quite reasonable for the "show more" pattern that only collapses on mobile. It ensures aria-hidden="true" only when it's collapsed and on a screen size where it can be collapsed.
+* Image Alt Text: alt="A portrait of Eyu Birhanu" is good and descriptive.
+
+10. Tag.js & Span.js
+* These are fine, simple presentational components.
+
+11. SocialLinks.js
+* Missing Instagram Link: link: "" for Instagram will render an <a> tag with an empty href. This is not ideal.
+* Recommendation: Either provide a valid link, a placeholder like #, or filter out items with empty links before mapping.
+jsx // Option 1: Filter out empty links export const SocialLinks = () => { const validSocialLinks = socialLinks.filter(item => item.link); // Filter out items with empty/null links return ( <div className="hidden lg:flex gap-4 items-center justify-center"> {validSocialLinks.map((item, index) => { return ( <a key={index} className="text-iconColor hover:text-lightWhite" href={item.link} target="_blank" // For external links rel="noopener noreferrer" // For security aria-label={item.icon.replace('fa-', '')} // Add aria-label for accessibility > <i className={`fa-brands ${item.icon}`}></i> </a> ); })} </div> ); };
+* Accessibility: Add aria-label to the social links for better screen reader support.
+* External Links: Add target="_blank" rel="noopener noreferrer" to social links.
+* Visibility: hidden lg:flex means these social links are only on large screens in this specific component instance. The NavBar uses them in its desktop view but not mobile. The Footer also uses them. This seems consistent.
+
+12. NavLinks.js
+* Looks good. The handleLocalLinkClick for closing the mobile menu is a nice touch.
+
+13. index.css
+* overflow-x: hidden; on html and body: This is often a quick fix for horizontal overflow issues. It's better to identify what's causing the overflow and fix that element's styling directly. If you genuinely don't want any horizontal scroll, it's okay, but be mindful it can hide layout problems.
+* Background Color: body { background-color: #1A1A1A; }. This is also set on the main div in App.js (bg-blackCustom). You can keep it in one place, typically on the body is fine, or on the root div of your app.
+
+14. tailwind.config.js
+* Looks good. Your custom theme extensions are well-defined.
+* The commented-out colors (// greenDark, // greenLight) can be removed if you've settled on the new ones.
+
+Summary of Key Recommended Updates (Code Snippets):
+
+Global FontAwesome Import (e.g., in src/main.jsx):
+
+// src/main.jsx or src/index.js
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './App';
+import './index.css';
+import '@fortawesome/fontawesome-free/css/all.min.css'; // ADD THIS LINE
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+);
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+JavaScript
+IGNORE_WHEN_COPYING_END
+
+(And remove individual imports from components)
+
+Hero.js - CV Link:
+
+<a
+  download="Eyu_Birhanus's_cv.pdf" // Maybe add .pdf to the suggested filename
+  className="bg-lightWhite hover:bg-white/80 text-blackCustom font-medium py-3 px-14 rounded-xl"
+  href={cv}
+  target="_blank"
+  rel="noopener noreferrer" // ADDED
+>
+  Download Cv
+</a>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Jsx
+IGNORE_WHEN_COPYING_END
+
+Footer.js - Dynamic Year:
+
+<p className="text-sm">
+  © {new Date().getFullYear()} All rights are reserved.{" "} {/* UPDATED */}
+  <a
+    className="hover:text-lightWhite/90"
+    href="https://www.linkedin.com/in/eyu-birhanu/"
+    target="_blank" // Add for external link
+    rel="noopener noreferrer" // Add for external link
+  >
+    Eyu Birhanu
+  </a>
+</p>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Jsx
+IGNORE_WHEN_COPYING_END
+
+Also add target="_blank" rel="noopener noreferrer" to the LinkedIn link.
+
+Collaborate.js - Email Link:
+
+<a
+  className="w-full flex items-center gap-2 bg-blackCustom hover:bg-blackCustom/90 text-lightWhite font-medium py-3 px-8 rounded-xl"
+  href="mailto:eyubirhanu01@gmail.com" // UPDATED
+>
+  <img src={email} alt="Email icon" /> {/* ADDED alt */}
+  <p className="text-nowrap">Email me</p>
+</a>
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Jsx
+IGNORE_WHEN_COPYING_END
+
+SocialLinks.js - Improved Links:
+
+import React from "react";
+
+const socialLinksData = [ // Renamed for clarity
+  { name: "GitHub", icon: "fa-github", link: "https://github.com/Eyu32" },
+  { name: "LinkedIn", icon: "fa-linkedin", link: "https://www.linkedin.com/in/eyu-birhanu/" },
+  { name: "Telegram", icon: "fa-telegram", link: "https://t.me/eyubirhanu" },
+  { name: "Instagram", icon: "fa-instagram", link: "" }, // Or provide actual link
+];
+
+export const SocialLinks = ({ iconClassName = "text-xl" }) => { // Added iconClassName prop
+  const validLinks = socialLinksData.filter(item => item.link);
+
+  // If this component is used in different contexts with different visibility,
+  // the `hidden lg:flex` might need to be passed as a prop or handled by the parent.
+  // For now, assuming it's always for the desktop nav/footer variant.
+  return (
+    <div className="hidden lg:flex gap-4 items-center justify-center">
+      {validLinks.map((item) => ( // Changed to validLinks
+        <a
+          key={item.name} // Use a more stable key if possible, e.g., item.name
+          className={`text-iconColor hover:text-lightWhite ${iconClassName}`} // Apply iconClassName
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Link to Eyu Birhanu's ${item.name}`} // More descriptive aria-label
+        >
+          <i className={`fa-brands ${item.icon}`}></i>
+        </a>
+      ))}
+    </div>
+  );
+};
+IGNORE_WHEN_COPYING_START
+content_copy
+download
+Use code with caution.
+Jsx
+IGNORE_WHEN_COPYING_END
+
+Note on SocialLinks.js: Your NavBar passes iconClassName="text-xl". The updated SocialLinks component above now accepts and uses this prop. The Footer doesn't pass it, so it would use the default text-xl. Ensure this matches your design intent.
+
+Overall, your code is quite solid. These are mostly refinements for best practices, minor fixes, and enhanced accessibility. Keep up the great work!

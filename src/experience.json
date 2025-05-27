@@ -1,0 +1,36 @@
+[
+  {
+    "id": 1,
+    "title": "GO2COD – Co-founder & COO",
+    "year": 2024,
+    "since": "Present – Since founding",
+    "description": [
+      "Co-founded and lead a nonprofit platform offering free internships in web development, UI/UX, and Python.",
+      "Built and maintained the GO2COD website with responsive design and optimized UX.",
+      "Mentor interns in web technologies and design best practices.",
+      "Helped over 250 interns gain real-world experience through structured mentorship."
+    ]
+  },
+  {
+    "id": 2,
+    "title": "A2SV – Data Structures & Algorithms Trainee",
+    "year": 2025,
+    "since": "Present – Since joining A2SV",
+    "description": [
+      "Undergoing intensive training in data structures, algorithms, and problem-solving using JavaScript.",
+      "Participate in mock interviews to improve coding interview skills.",
+      "Solve algorithmic challenges in a collaborative, fast-paced environment."
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Freelance Web Developer & UI/UX Designer",
+    "year": 2025,
+    "since": "Since 2023 – Ongoing",
+    "description": [
+      "Design and develop responsive websites tailored to client needs using JavaScript and Tailwind CSS.",
+      "Create intuitive UI/UX designs using Figma for various platforms.",
+      "Improve site performance and usability through modern development practices."
+    ]
+  }
+]

@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "title": "Udacity – Programming Fundamentals",
+    "description": "Mastered core programming concepts and JavaScript basics through hands-on practice.",
+    "link": "https://www.udacity.com/certificate/e/e81c9868-4a55-11ef-96b0-e724e79fe7fe",
+    "year": 2024
+  },
+  {
+    "id": 2,
+    "title": "A2SV – Hackathon Quarterfinalist",
+    "description": "Advanced to quarterfinals in A2SV hackathon for creative tech solutions and teamwork.",
+    "link": "https://drive.google.com/file/d/1hG2DdVac91rD01P6NyotVk4pZBF9NKiD/view?usp=drive_link",
+    "year": 2024
+  },
+  {
+    "id": 3,
+    "title": "IBM SkillBuild – Cybersecurity Fundamentals",
+    "description": "Learned essential cybersecurity principles and protection techniques.",
+    "link": "https://www.credly.com/badges/73748ddc-d1e1-4190-9083-266ff391f14e",
+    "year": 2025
+  }
+]
