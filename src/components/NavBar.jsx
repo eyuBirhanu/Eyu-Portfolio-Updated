@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 
 import logo from "../assets/Desktop/logo.svg";
-import menuIcon from "../assets/Mobile/menu.svg";
-import closeIcon from "../assets/close.svg";
+import menuIcon from "../assets/Mobile/Menu.svg";
+import closeIcon from "../assets/Close.svg";
 
 import { NavLinks } from "./common/NavLinks";
 import { SocialLinks } from "./common/SocialLinks";
