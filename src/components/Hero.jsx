@@ -3,8 +3,8 @@ import profile from "../assets/Desktop/Profile.png";
 import bounce from "../assets/avaliable Bounce.svg";
 import cv from "../assets/Eyu_Birhanus's_cv.pdf";
 
-import { motion } from "framer-motion";
-import { fadeIn } from "../Variant";
+// import { motion } from "framer-motion";
+// import { fadeIn } from "../Variant";
 
 export const Hero = () => {
   return (
@@ -23,15 +23,15 @@ export const Hero = () => {
           <img src={bounce} alt="" />
           <p>Available for freelance</p>
         </div>
-        <motion.p
-          initial="hidden"
-          whileInView={"show"}
-          variants={fadeIn("right", 0.2)}
-          viewport={{ once: true, amount: 0.2 }}
+        <p
+          // initial="hidden"
+          // whileInView={"show"}
+          // variants={fadeIn("right", 0.2)}
+          // viewport={{ once: true, amount: 0.2 }}
           className="text-3xl lg:text-4xl font-medium text-center px-4"
         >
           Crafting Seamless Digital Experiences
-        </motion.p>
+        </p>
         <p className="text-base text-paragraph text-center sm:8/12 lg:w-4/12">
           Passionate web developer & UI/UX designer, turning ideas into
           intuitive and stunning digital solutions
