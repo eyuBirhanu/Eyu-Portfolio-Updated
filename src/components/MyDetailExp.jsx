@@ -14,7 +14,7 @@ export const MyDetailExp = () => {
       <section className="flex items-center justify-center py-4 bg-blackCustom text-lightWhite">
         <div
           className="
-    hidden lg:block 
+    block 
     fixed
     w-[713.2px]
     h-[234.2px]

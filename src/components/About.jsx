@@ -17,7 +17,7 @@ export const About = () => {
       >
         <div
           className="
-    hidden lg:block 
+    block 
     fixed
     w-[713.2px]
     h-[234.2px]
