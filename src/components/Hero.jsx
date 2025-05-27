@@ -3,10 +3,17 @@ import profile from "../assets/Desktop/Profile.png";
 import bounce from "../assets/avaliable Bounce.svg";
 import cv from "../assets/Eyu_Birhanus's_cv.pdf";
 
+import { motion } from "framer-motion";
+import { fadeIn } from "../Variant";
+
 export const Hero = () => {
   return (
     <div>
-      <section
+      <motion
+        // initial="hidden"
+        // whileInView={"show"}
+        // variants={fadeIn("up", 0.2)}
+        // viewport={{ once: true, amount: 0.2 }}
         id="home"
         className="bg-linearBlack text-lightWhite pt-24 pb-20 lg:h-screen flex flex-col items-center justify-center gap-4 px-4"
       >
@@ -16,9 +23,15 @@ export const Hero = () => {
           <img src={bounce} alt="" />
           <p>Available for freelance</p>
         </div>
-        <p className="text-3xl lg:text-4xl font-medium text-center px-4">
+        <motion.p
+          initial="hidden"
+          whileInView={"show"}
+          variants={fadeIn("right", 0.2)}
+          viewport={{ once: true, amount: 0.2 }}
+          className="text-3xl lg:text-4xl font-medium text-center px-4"
+        >
           Crafting Seamless Digital Experiences
-        </p>
+        </motion.p>
         <p className="text-base text-paragraph text-center sm:8/12 lg:w-4/12">
           Passionate web developer & UI/UX designer, turning ideas into
           intuitive and stunning digital solutions
@@ -31,7 +44,7 @@ export const Hero = () => {
         >
           Download Cv
         </a>
-      </section>
+      </motion>
     </div>
   );
 };

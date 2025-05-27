@@ -6,6 +6,6 @@ export default defineConfig({
   plugins: [react()],
   server: {
     port: 3000,
-    base: "/Eyu-Portfolio-Updated"
+    base: process.env.VITE_BASE_PATH || "/Eyu-Portfolio-Updated"
   },
 })
