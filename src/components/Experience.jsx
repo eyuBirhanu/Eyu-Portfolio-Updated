@@ -64,7 +64,7 @@ export const Experience = () => {
       >
         <div
           className="
-    block 
+    hidden lg:block 
     fixed
     w-[713.2px]
     h-[234.2px]
