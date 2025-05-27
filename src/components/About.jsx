@@ -13,30 +13,30 @@ export const About = () => {
     <div>
       <section
         id="about"
-        className="relative flex items-center justify-center py-12 sm:py-20 bg-blackCustom overflow-hidden"
+        className="relative flex items-center justify-center py-12 lg:py-20 bg-blackCustom overflow-hidden"
       >
         <div
           className="
-    hidden sm:block 
+    hidden lg:block 
     fixed
     w-[713.2px]
     h-[234.2px]
     rotate-[-155deg]
-    blur-[150px] sm:blur-[250px]
-    -right-40 sm:-right-60
+    blur-[150px] lg:blur-[250px]
+    -right-40 lg:-right-60
     -top-20
     rounded-full
-    bg-lightWhite/10 sm:bg-lightWhite/25
+    bg-lightWhite/10 lg:bg-lightWhite/25
     pointer-events-none"
           aria-hidden="true"
         ></div>
 
-        <div className="relative z-10 flex flex-col w-11/12 max-w-screen-lg xl:max-w-screen-xl gap-8 sm:gap-10 py-4">
-          <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl sm:text-4xl font-semibold text-lightWhite text-left">
+        <div className="relative z-10 flex flex-col w-11/12 max-w-screen-lg xl:max-w-screen-xl gap-8 lg:gap-10 py-4">
+          <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl lg:text-4xl font-semibold text-lightWhite text-left">
             About Me
           </h2>
 
-          <div className="flex flex-col lg:flex-row items-center lg:items-center gap-4 sm:gap-6">
+          <div className="flex flex-col lg:flex-row items-center lg:items-center gap-4 lg:gap-6">
             <div className="flex flex-col gap-4 text-lightWhite/60 order-2 lg:order-1">
               {" "}
               <p className="text-base leading-relaxed">
@@ -50,7 +50,7 @@ export const About = () => {
               <div
                 className={`transition-all duration-500 ease-in-out overflow-hidden ${
                   showMore ? "max-h-[1000px] opacity-100" : "max-h-0 opacity-0"
-                } sm:max-h-none sm:opacity-100 flex flex-col gap-4`}
+                } lg:max-h-none lg:opacity-100 flex flex-col gap-4`}
                 id="more-text-content"
                 aria-hidden={
                   !showMore &&
@@ -72,7 +72,7 @@ export const About = () => {
               </div>
               <button
                 onClick={toggleShowMore}
-                className="sm:hidden  hover:text-[#447e54]/60 text-[#447e54] hover:underline self-start mt-2"
+                className="lg:hidden  hover:text-[#447e54]/60 text-[#447e54] hover:underline self-start mt-2"
                 aria-expanded={showMore}
                 aria-controls="more-text-content"
               >

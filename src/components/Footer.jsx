@@ -13,7 +13,7 @@ export const Footer = () => {
       <footer className="flex items-center justify-center py-8 bg-blackCustom">
         <div className="flex gap-6 w-11/12 flex-col py-8">
           <hr />
-          <div className="flex flex-col-reverse items-center justify-center gap-4 sm:flex-row sm:justify-between text-lightWhite/75 ">
+          <div className="flex flex-col-reverse items-center justify-center gap-4 lg:flex-row lg:justify-between text-lightWhite/75 ">
             <p className="text-sm">
               © 2025 All rights are reserved.{" "}
               <a
@@ -38,7 +38,7 @@ export const Footer = () => {
                   );
                 })}
               </div>
-              <div className="flex  gap-4 items-center justify-center sm:justify-start">
+              <div className="flex  gap-4 items-center justify-center lg:justify-start">
                 <SocialLinks iconClassName="text-xl" />
               </div>
             </div>

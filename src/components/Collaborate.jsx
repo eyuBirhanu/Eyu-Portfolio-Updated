@@ -10,17 +10,17 @@ export const Collaborate = () => {
         id="collaborate"
         className="flex bg-blackCustom items-center justify-center py-8 px-4"
       >
-        <div className="flex items-center justify-center h-[400px] sm:h-[500px]  bg-lightWhite text-blackCustom w-[95%] max-w-[1600px] flex-col py-8 rounded-2xl">
+        <div className="flex items-center justify-center h-[400px] lg:h-[500px]  bg-lightWhite text-blackCustom w-[95%] max-w-[1600px] flex-col py-8 rounded-2xl">
           <div className="relative flex items-center justify-center flex-col gap-6">
             <img
-              className="w-[90px] h-[90px] sm:w-[120px] sm:h-[120px]"
+              className="w-[90px] h-[90px] lg:w-[120px] lg:h-[120px]"
               src={collaborate}
               alt="collaborate"
             />
             <p className="w-10/12 text-center font-Josefin_Sans text-3xl lg:text-4xl font-medium">
               Tell me about your next project
             </p>
-            <div className="flex flex-col sm:flex-row gap-6 ">
+            <div className="flex flex-col lg:flex-row gap-6 ">
               <a
                 className="w-full flex  items-center gap-2 bg-blackCustom hover:bg-blackCustom/90 text-lightWhite font-medium py-3 px-8 rounded-xl"
                 href="eyubirhanu01@gmail.com"
@@ -37,8 +37,8 @@ export const Collaborate = () => {
               </a>
             </div>
           </div>
-          <div className="absolute w-full max-w-[713px] h-[100px] sm:h-[234.2px] rotate-[35deg] blur-[250px] sm:blur-[150px] right-0 sm:-right-40 rounded-full bg-blackCustom/25"></div>
-          <div className="hidden sm:inline absolute w-[713.2px] h-[234.2px] rotate-[-155deg] blur-[150px] -left-60 rounded-full bg-blackCustom/25"></div>
+          <div className="absolute w-full max-w-[713px] h-[100px] lg:h-[234.2px] rotate-[35deg] blur-[250px] lg:blur-[150px] right-0 lg:-right-40 rounded-full bg-blackCustom/25"></div>
+          <div className="hidden lg:inline absolute w-[713.2px] h-[234.2px] rotate-[-155deg] blur-[150px] -left-60 rounded-full bg-blackCustom/25"></div>
         </div>
       </section>
     </div>

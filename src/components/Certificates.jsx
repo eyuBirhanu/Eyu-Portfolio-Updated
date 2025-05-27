@@ -7,10 +7,10 @@ export const Certificates = () => {
     <div>
       <section className="flex items-center justify-center py-8 bg-blackCustom text-lightWhite">
         <div className="flex gap-6 w-11/12 flex-col py-8">
-          <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl sm:text-4xl font-semibold text-lightWhite text-left">
+          <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl lg:text-4xl font-semibold text-lightWhite text-left">
             Certification
           </h2>
-          <div className="flex flex-col sm:flex-row gap-8 sm:gap-4">
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-4">
             {certificateJson.map((certificate) => {
               return (
                 <div key={certificate.id} className=" w-full lg:w-1/3 flex">

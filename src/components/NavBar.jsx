@@ -33,10 +33,10 @@ export const NavBar = () => {
         <div className="fixed top-4 z-50 flex justify-between items-center left-1/2 -translate-x-1/2 w-11/12 h-12 px-4 backdrop-blur-xl rounded-lg ">
           <a href="#home" onClick={isActive ? closeMenu : undefined}>
             {" "}
-            <img src={logo} alt="Logo" className="h-6 sm:h-8" />{" "}
+            <img src={logo} alt="Logo" className="h-6 md:h-8" />{" "}
           </a>
 
-          <div className="hidden sm:flex  items-center gap-x-6  md:gap-x-32">
+          <div className="hidden md:flex  items-center gap-x-6  md:gap-x-32">
             <nav>
               <NavLinks navText={navText} />
             </nav>

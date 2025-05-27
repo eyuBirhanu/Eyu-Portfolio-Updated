@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   const tags = project.tags && Array.isArray(project.tags) ? project.tags : [];
 
   return (
-    <div className="flex flex-col  gap-6 sm:gap-8 items-start p-4 sm:p-6 bg-blackCustom rounded-lg shadow-xl backdrop-blur-md border border-lightWhite/5 h-full">
+    <div className="flex flex-col  gap-6 lg:gap-8 items-start p-4 lg:p-6 bg-blackCustom rounded-lg shadow-xl backdrop-blur-md border border-lightWhite/5 h-full">
       <div className="w-full  flex-shrink-0">
         <a
           className="block hover:-translate-y-1 transition-transform duration-300 ease-in-out group rounded-lg overflow-hidden"
@@ -26,7 +26,7 @@ const ProjectCard = ({ project }) => {
         <h3 className="text-xl lg:text-2xl font-semibold text-white hover:text-lightWhite transition-colors">
           {project.title}
         </h3>
-        <p className="text-paragraph text-sm sm:text-base leading-relaxed">
+        <p className="text-paragraph text-sm lg:text-base leading-relaxed">
           {project.description}
         </p>
         {project.repo && (
@@ -60,26 +60,26 @@ export const Experience = () => {
     <div>
       <section
         id="explorer"
-        className="relative flex items-center justify-center py-10 sm:py-16 bg-blackCustom overflow-hidden"
+        className="relative flex items-center justify-center py-10 lg:py-16 bg-blackCustom overflow-hidden"
       >
         <div
           className="
-    hidden sm:block 
+    hidden lg:block 
     fixed
     w-[713.2px]
     h-[234.2px]
     rotate-[-155deg]
-    blur-[150px] sm:blur-[250px]
-    -right-40 sm:-right-60
+    blur-[150px] lg:blur-[250px]
+    -right-40 lg:-right-60
     -top-20
     rounded-full
-    bg-lightWhite/10 sm:bg-lightWhite/25
+    bg-lightWhite/10 lg:bg-lightWhite/25
     pointer-events-none"
           aria-hidden="true"
         ></div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 w-11/12 max-w-screen-lg xl:max-w-screen-xl gap-x-8 gap-y-10 sm:gap-y-12 py-4 z-10">
-          <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl sm:text-4xl font-semibold text-lightWhite text-left">
+        <div className="grid grid-cols-1 lg:grid-cols-2 w-11/12 max-w-screen-lg xl:max-w-screen-xl gap-x-8 gap-y-10 lg:gap-y-12 py-4 z-10">
+          <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl lg:text-4xl font-semibold text-lightWhite text-left">
             Explore My Projects
           </h2>
           {projectsData.length > 0 ? (
@@ -96,7 +96,7 @@ export const Experience = () => {
             </p>
           )}{" "}
           <div className="w-full  flex flex-col  ">
-            <p className="font-Josefin_Sans text-lg sm:text-xl text-lightWhite ">
+            <p className="font-Josefin_Sans text-lg lg:text-xl text-lightWhite ">
               Find More Of My Work
             </p>
             <div className="flex gap-2 text-greenDark">
@@ -110,7 +110,7 @@ export const Experience = () => {
                 #Frontend Mentor
               </a>
               <a
-                href="https://github.com/Eyu32"
+                href="https://github.com/eyuBirhanu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" hover:underline  transition-all text-sm  hover:-translate-y-[.5px] duration-300 ease-in-out"

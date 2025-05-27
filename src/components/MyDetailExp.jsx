@@ -14,24 +14,24 @@ export const MyDetailExp = () => {
       <section className="flex items-center justify-center py-4 bg-blackCustom text-lightWhite">
         <div
           className="
-    hidden sm:block 
+    hidden lg:block 
     fixed
     w-[713.2px]
     h-[234.2px]
     rotate-[-155deg]
-    blur-[150px] sm:blur-[250px]
-    -right-40 sm:-right-60
+    blur-[150px] lg:blur-[250px]
+    -right-40 lg:-right-60
     -top-20
     rounded-full
-    bg-lightWhite/10 sm:bg-lightWhite/25
+    bg-lightWhite/10 lg:bg-lightWhite/25
     pointer-events-none"
           aria-hidden="true"
         ></div>
         <div className="flex gap-6 w-11/12 flex-col py-4">
-          <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl sm:text-4xl font-semibold text-lightWhite text-left">
+          <h2 className="font-Josefin_Sans lg:col-span-2 text-3xl lg:text-4xl font-semibold text-lightWhite text-left">
             Experience
           </h2>
-          <div className="flex flex-col sm:flex-row gap-8 w-full overflow-hidden">
+          <div className="flex flex-col lg:flex-row gap-8 w-full overflow-hidden">
             <div className="gap-8 grid grid-cols-1 lg:grid-cols-2 lg:items-start">
               {experiance.map((exp, index) => {
                 const isActive = activeIndex === index;
@@ -44,7 +44,7 @@ export const MyDetailExp = () => {
                       <div className=" flex justify-between items-center gap-8 w-full">
                         <p
                           onClick={() => handleClick(index)}
-                          className=" hover:bg-lightWhite/5 rounded-sm w-full font-medium text-lg sm:text-xl cursor-pointer"
+                          className=" hover:bg-lightWhite/5 rounded-sm w-full font-medium text-lg lg:text-xl cursor-pointer"
                         >
                           {exp.title}
                         </p>
