@@ -1,7 +1,7 @@
 import React from "react";
 import profile from "../assets/Desktop/Profile.png";
 import bounce from "../assets/avaliable Bounce.svg";
-import cv from "../assets/Eyu_Birhanus's_cv.pdf";
+import cv from "../assets/cv_2025.pdf";
 
 // import { motion } from "framer-motion";
 // import { fadeIn } from "../Variant";
