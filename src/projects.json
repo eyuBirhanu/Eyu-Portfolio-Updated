@@ -5,10 +5,10 @@
     "title": "Kalkidan Birhanu - Creative Video Editor Portfolio",
     "description": "Custom Portfolio Website for a Video Editor | UI/UX Design & Web Development",
     "imgSrc": "/assets/Kal_portfolio.png",
-    "live": "https://eyubirhanu.github.io/kalkidan_birhanu-s_portfolio/",  
+    "live": "https://kalkidan-portfolio-five.vercel.app/",  
     "alt": "Creative Video Editor Portfolio",
-    "repo": "https://github.com/eyuBirhanu/kalkidan_birhanu-s_portfolio",
-    "tags": ["Figma", "TailwindCss", "Responsive Design", "Portfolio", "UI/UX", "Javascript"]
+    "repo": "https://github.com/eyuBirhanu/kalkidan_portfolio",
+    "tags": ["React", "TailwindCss", "Typescript", "Figma", "UI/UX", ""]
   },
   {
     "id": 2,
