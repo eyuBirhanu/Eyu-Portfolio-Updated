@@ -13,6 +13,7 @@ export const SocialLinks = () => {
         return (
           <a
             key={index}
+            target="_blank"
             className="text-iconColor hover:text-lightWhite"
             href={item.link}
           >
