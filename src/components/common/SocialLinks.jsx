@@ -3,7 +3,7 @@ const socialLinks = [
   { icon: "fa-github", link: "https://github.com/eyuBirhanu" },
   { icon: "fa-linkedin", link: "https://www.linkedin.com/in/eyu-birhanu/" },
   { icon: "fa-telegram", link: "https://t.me/eyubirhanu" },
-  { icon: "fa-code fa-solid", link: "https://leetcode.com/u/Eyu-Birhanu/" },
+  { icon: "fa-code", link: "https://leetcode.com/u/Eyu-Birhanu/" },
 ];
 
 export const SocialLinks = () => {
