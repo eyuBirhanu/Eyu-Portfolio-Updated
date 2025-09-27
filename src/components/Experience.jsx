@@ -6,7 +6,7 @@ const ProjectCard = ({ project }) => {
   const tags = project.tags && Array.isArray(project.tags) ? project.tags : [];
 
   return (
-    <div className="flex flex-col  gap-6 lg:gap-8 items-start p-4 lg:p-6 bg-blackCustom rounded-lg shadow-xl backdrop-blur-md border border-lightWhite/5 h-full">
+    <div className="flex flex-col hover:-translate-y-1 transition-transform duration-300 ease-in-out  gap-6 lg:gap-8 items-start p-4 lg:p-6 bg-blackCustom rounded-lg shadow-xl backdrop-blur-md border border-lightWhite/5 h-full">
       {/* <div className="w-full  flex-shrink-0">
         <a
           className="block hover:-translate-y-1 transition-transform duration-300 ease-in-out group rounded-lg overflow-hidden"
