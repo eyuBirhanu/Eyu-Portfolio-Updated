@@ -20,7 +20,10 @@ export const Hero = () => {
         <img className="w-40 max-w-[160px]" src={profile} alt="Profile" />
         <h1 className="text-3xl lg:text-4xl font-medium">Hi, I’m Eyu</h1>
         <div className="flex font-light text-lightWhite/80 bg-grayDark gap-1 px-3 rounded-xl ">
-          <img src={bounce} alt="" />
+          <span class="relative flex size-3">
+            <span class="inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+            <span class="inline-flex size-3 rounded-full bg-sky-500"></span>
+          </span>
           <p>Available for freelance</p>
         </div>
         <p
@@ -37,12 +40,11 @@ export const Hero = () => {
           intuitive and stunning digital solutions
         </p>
         <a
-          download="Eyu_Birhanus's cv"
           className="bg-lightWhite hover:bg-white/80 text-blackCustom font-medium py-3 px-14 rounded-xl"
-          href={cv}
+          href={"https://drive.google.com/file/d/1AkJGceZKBtOnjVG7geiTbVuRRm-w9Ogy/view?usp=sharing"}
           target="_blank"
         >
-          Download Cv
+          Resume
         </a>
       </motion>
     </div>
