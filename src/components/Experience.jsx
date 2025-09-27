@@ -30,6 +30,7 @@ const ProjectCard = ({ project }) => {
           {project.description}
         </p>
         {project.repo && (
+      <div className="flex gap-4">
           <a
             className="text-greenDark font-normal hover:underline text-sm inline-block"
             href={project.repo}
@@ -38,6 +39,16 @@ const ProjectCard = ({ project }) => {
           >
             #Check Repo
           </a>
+
+      <a
+            className="text-greenDark font-normal hover:underline text-sm inline-block"
+            href={project.live}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            #See Live
+          </a>
+      </div>
         )}
         {tags.length > 0 && (
           <div className="mt-4">
