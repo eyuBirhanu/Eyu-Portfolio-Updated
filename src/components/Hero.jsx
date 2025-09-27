@@ -21,8 +21,8 @@ export const Hero = () => {
         <h1 className="text-3xl lg:text-4xl font-medium">Hi, I’m Eyu</h1>
         <div className="flex items-center font-light text-lightWhite/80 bg-grayDark gap-1 px-3 rounded-xl ">
           <span class="flex w-4 h-4">
-            <span class="inline-flex h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-            <span class="inline-flex size-3 rounded-full bg-sky-500"></span>
+            <span class="h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
+            <span class="h-full w-full rounded-full bg-sky-500"></span>
           </span>
           <p>Available for freelance</p>
         </div>
