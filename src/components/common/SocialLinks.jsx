@@ -9,7 +9,7 @@ const socialLinks = [
 
 export const SocialLinks = () => {
   return (
-    <div className="hidden lg:flex  gap-4 items-center justify-center">
+    <div className="flex gap-4 items-center justify-center">
       {socialLinks.map((item, index) => {
         return (
           <a
