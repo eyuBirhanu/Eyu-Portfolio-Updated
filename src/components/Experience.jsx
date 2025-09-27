@@ -101,7 +101,7 @@ export const Experience = () => {
             </p>
             <div className="flex gap-2 text-greenDark">
               <a
-                href="https://www.frontendmentor.io/profile/Eyu32"
+                href="https://www.frontendmentor.io/profile/eyuBirhanu"
                 target="_blank"
                 rel="noopener noreferrer"
                 className=" hover:underline  transition-all text-sm  hover:-translate-y-[.5px] duration-300 ease-in-out"
