@@ -4,6 +4,7 @@ const socialLinks = [
   { icon: "fa-github", link: "https://github.com/eyuBirhanu" },
   { icon: "fa-telegram", link: "https://t.me/eyubirhanu" },
   { icon: "fa-code", link: "https://leetcode.com/u/Eyu-Birhanu/" },
+  { icon: "fa-upwork", link: "https://www.upwork.com/freelancers/~01b379635fd2164998?mp_source=share" },
 ];
 
 export const SocialLinks = () => {
