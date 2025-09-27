@@ -1,7 +1,7 @@
 import React from "react";
 import profile from "../assets/Desktop/Profile.png";
 import bounce from "../assets/avaliable Bounce.svg";
-import cv from "../assets/cv_2025.pdf";
+// import cv from "../assets/cv_2025.pdf";
 
 // import { motion } from "framer-motion";
 // import { fadeIn } from "../Variant";
@@ -20,9 +20,9 @@ export const Hero = () => {
         <img className="w-40 max-w-[160px]" src={profile} alt="Profile" />
         <h1 className="text-3xl lg:text-4xl font-medium">Hi, I’m Eyu</h1>
         <div className="flex items-center font-light text-lightWhite/80 bg-grayDark gap-1 px-3 rounded-xl ">
-          <span class="flex w-4 h-4">
-            <span class="h-full w-full animate-ping rounded-full bg-sky-400 opacity-75"></span>
-            <span class="h-full w-full rounded-full bg-sky-500"></span>
+          <span class="flex items-center justify-center w-4 h-4">
+            <span class="h-full w-full animate-ping rounded-full bg-lightWhite opacity-75"></span>
+            <span class="h-full w-full rounded-full bg-lightWhite"></span>
           </span>
           <p>Available for freelance</p>
         </div>
