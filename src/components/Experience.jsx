@@ -7,7 +7,7 @@ const ProjectCard = ({ project }) => {
 
   return (
     <div className="flex flex-col  gap-6 lg:gap-8 items-start p-4 lg:p-6 bg-blackCustom rounded-lg shadow-xl backdrop-blur-md border border-lightWhite/5 h-full">
-      <div className="w-full  flex-shrink-0">
+      {/* <div className="w-full  flex-shrink-0">
         <a
           className="block hover:-translate-y-1 transition-transform duration-300 ease-in-out group rounded-lg overflow-hidden"
           href={project.live}
@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
             alt={project.alt || `Screenshot of ${project.title}`}
           />
         </a>
-      </div>
+      </div> */}
 
       <div className="flex flex-col gap-3 w-full">
         <h3 className="text-xl lg:text-2xl font-semibold text-white hover:text-lightWhite transition-colors">
