@@ -17,7 +17,7 @@ export const SocialLinks = () => {
             className="text-iconColor hover:text-lightWhite"
             href={item.link}
           >
-            <i className={`fa-brands ${item.icon}`}></i>
+            <i className={`${item.icon === "fa-code" ? "fa-solid" : "fa-brands"} ${item.icon}`}></i>
           </a>
         );
       })}
