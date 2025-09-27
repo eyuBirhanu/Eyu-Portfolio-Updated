@@ -3,7 +3,7 @@
     "id": 1,
     "title": "GebetaLink – SaaS Restaurant Management Platform",
     "description": "Founder & Lead Developer | Architected and built a full-stack SaaS platform for restaurants in Ethiopia. The platform includes real-time order dashboards (Socket.IO), Chapa payment integration, and a multi-role admin system for restaurant owners, chefs, and super admins.",
-    "imgSrc": "https://source.unsplash.com/featured/?restaurant,technology",
+    "imgSrc": "/assets/Kal_portfolio.png",
     "live": "https://gebetalink.vercel.app/",
     "alt": "GebetaLink SaaS Restaurant Platform",
     "repo": "https://github.com/eyuBirhanu/gebetalink-v1",
