@@ -19,10 +19,10 @@ export const Hero = () => {
       >
         <img className="w-40 max-w-[160px]" src={profile} alt="Profile" />
         <h1 className="text-3xl lg:text-4xl font-medium">Hi, I’m Eyu</h1>
-        <div className="flex items-center font-light text-lightWhite/80 bg-grayDark gap-1 px-3 rounded-xl ">
-          <span class="flex items-center justify-center w-4 h-4">
-            <span class="h-full w-full animate-ping rounded-full bg-lightWhite opacity-75"></span>
-            <span class="h-full w-full rounded-full bg-lightWhite"></span>
+        <div className="flex items-center font-light text-lightWhite/80 bg-grayDark gap-1 px-3 rounded-xl">
+          <span className="relative flex items-center justify-center w-5 h-5">
+            <span className="absolute inline-flex h-full w-full rounded-full bg-lightWhite opacity-75 animate-ping"></span>
+            <span className="relative inline-flex rounded-full h-3 w-3 bg-lightWhite"></span>
           </span>
           <p>Available for freelance</p>
         </div>
