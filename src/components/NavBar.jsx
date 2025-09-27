@@ -74,6 +74,7 @@ export const NavBar = () => {
           >
             <nav className="flex flex-col items-center justify-center gap-y-8 text-center w-full">
               <NavLinks navText={navText} onLinkClick={closeMenu} isMobile />
+               <SocialLinks iconClassName="text-xl" />
             </nav>
           </div>
         </>
