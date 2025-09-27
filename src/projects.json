@@ -1,23 +1,42 @@
-
 [
   {
     "id": 1,
-    "title": "Kalkidan Birhanu - Creative Video Editor Portfolio",
-    "description": "Custom Portfolio Website for a Video Editor | UI/UX Design & Web Development",
-    "imgSrc": "/assets/Kal_portfolio.png",
-    "live": "https://kalkidan-portfolio-five.vercel.app/",  
-    "alt": "Creative Video Editor Portfolio",
-    "repo": "https://github.com/eyuBirhanu/kalkidan_portfolio",
-    "tags": ["React", "TailwindCss", "Typescript", "Figma", "UI/UX", ""]
+    "title": "GebetaLink – SaaS Restaurant Management Platform",
+    "description": "Founder & Lead Developer | Architected and built a full-stack SaaS platform for restaurants in Ethiopia. The platform includes real-time order dashboards (Socket.IO), Chapa payment integration, and a multi-role admin system for restaurant owners, chefs, and super admins.",
+    "imgSrc": "https://source.unsplash.com/featured/?restaurant,technology",
+    "live": "https://gebetalink.vercel.app/",
+    "alt": "GebetaLink SaaS Restaurant Platform",
+    "repo": "https://github.com/eyuBirhanu/gebetalink-v1",
+    "tags": ["Next.js", "Express", "MongoDB", "TailwindCss", "Cloudinary", "Socket.IO", "Full-Stack"]
   },
   {
     "id": 2,
+    "title": "Hope Behind Bars – Non-Profit Website with CMS",
+    "description": "Lead Full-Stack Developer | Developed an impactful website for a non-profit organization, focusing on storytelling and driving donations. Delivered a custom admin dashboard enabling the client to publish blogs, videos, and publications easily, all built with Next.js and CMS integration.",
+    "imgSrc": "https://source.unsplash.com/featured/?nonprofit,donation,website",
+    "live": "https://www.hopebehindbarsethiopia.org/",
+    "alt": "Hope Behind Bars Website",
+    "repo": "Not available",
+    "tags": ["Next.js", "CMS", "TailwindCss", "Full-Stack", "UI/UX", "Client Management", "Responsive Design"]
+  },
+  {
+    "id": 3,
+    "title": "Kalkidan Birhanu – Creative Video Editor Portfolio",
+    "description": "Lead Frontend Developer | Built a high-performance React portfolio for a creative professional to showcase video and design work. Designed a fast, SEO-optimized, and engaging experience using React, Tailwind CSS, and TypeScript.",
+    "imgSrc": "https://source.unsplash.com/featured/?video,editor,portfolio",
+    "live": "https://kalkidan-portfolio-five.vercel.app/",
+    "alt": "Creative Video Editor Portfolio",
+    "repo": "https://github.com/eyuBirhanu/kalkidan_portfolio",
+    "tags": ["React", "TailwindCss", "TypeScript", "UI/UX", "Responsive Design", "Frontend"]
+  },
+  {
+    "id": 4,
     "title": "GO2COD Internship & Training Platform",
-    "description": "Web App for Internship Management, Mentorship, and Developer Training | COO-led Project",
-    "imgSrc": "/assets/Go2cod.png",
+    "description": "COO & Co-Founder | Led the creation of a web app for managing internships, mentorships, and developer training. The platform provides seamless intern onboarding and management for hundreds of students across Africa.",
+    "imgSrc": "https://source.unsplash.com/featured/?teamwork,mentorship,education",
     "live": "https://go2cod.com.et",
     "alt": "GO2COD Internship Platform",
-    "repo": "Not available",  
+    "repo": "Not available",
     "tags": ["TailwindCss", "Leadership", "Mentorship", "UI/UX", "Web Development", "Javascript"]
   }
 ]
